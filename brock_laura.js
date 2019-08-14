@@ -98,9 +98,23 @@ console.log(tallies);
 //so it's not clear how to use that with an array of strings...
 // this doesn't work, but some parts are probably good
 
-let input = "noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest";
+// second attempt
+const input = "noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest";
+const newArr = input.split('');
+let decoder = newArr.reduce((decodeString, word) => {
+  if(word.length === 3){
+    return decodeString + '';
 
-let newArray = function convertToArray(string) {
+  }
+  else {
+    return decodeString + word[word.length - 1].toUpperCase();
+  }
+}, '');
+console.log(decoder);
+
+
+// first attempt
+/* let newArray = function convertToArray(string) {
   let stringArray = string.split(" ");
   console.log(stringArray);
   return stringArray;
@@ -123,5 +137,7 @@ function decoder(array) {
   return initialValue;
 };
 decoder(newArray);
+
+*/
 
 
